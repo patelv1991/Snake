@@ -6,7 +6,7 @@
   var View = SG.View = function ($el) {
     this.$el = $el;
 
-    this.board = new SG.Board(40);
+    this.board = new SG.Board(45);
     this.setupGrid();
 
     this.intervalId = window.setInterval(
@@ -36,8 +36,6 @@
   View.prototype.handleKeyEvent = function (event) {
     if (View.KEYS[event.keyCode]) {
       this.board.snake.turn(View.KEYS[event.keyCode]);
-    } else {
-      // some other key was pressed; ignore.
     }
   };
 

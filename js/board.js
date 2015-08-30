@@ -8,6 +8,7 @@
 
     this.snake = new SG.Snake(this);
     this.apple = new SG.Apple(this);
+    // this.intervalId = window.setInterval(this.addNewApple.bind(this), 10000);
   };
 
   Board.BLANK_SYMBOL = ".";
@@ -38,6 +39,9 @@
   //   grid.map(function (row) {
   //     return row.join("");
   //   }).join("\n");
+  // };
+  // Board.prototype.addNewApple = function () {
+  //   this.apple = new SG.Apple(this);
   // };
 
   Board.prototype.validPosition = function (coord) {

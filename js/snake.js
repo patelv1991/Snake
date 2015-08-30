@@ -27,7 +27,7 @@
 
   Snake.prototype.eatApple = function () {
     if (this.head().equals(this.board.apple.position)) {
-      this.growTurns += 2;
+      this.growTurns += 3;
       return true;
     } else {
       return false;
