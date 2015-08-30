@@ -27,7 +27,7 @@
 
   Snake.prototype.eatApple = function () {
     if (this.head().equals(this.board.apple.position)) {
-      this.growTurns += 3;
+      this.growTurns += 2;
       return true;
     } else {
       return false;
@@ -52,10 +52,12 @@
   Snake.prototype.isValid = function () {
     var head = this.head();
 
+    // checks whether snake is still within the boundry
     if (!this.board.validPosition(this.head())) {
       return false;
     }
 
+    // checks whether snake has run into itself
     for (var i = 0; i < this.segments.length - 1; i++) {
       if (this.segments[i].equals(head)) {
         return false;

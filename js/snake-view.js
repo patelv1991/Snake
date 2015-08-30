@@ -6,7 +6,7 @@
   var View = SG.View = function ($el) {
     this.$el = $el;
 
-    this.board = new SG.Board(20);
+    this.board = new SG.Board(40);
     this.setupGrid();
 
     this.intervalId = window.setInterval(
@@ -18,10 +18,17 @@
   };
 
   View.KEYS = {
+    // arrow key codes
     38: "N",
     39: "E",
     40: "S",
-    37: "W"
+    37: "W",
+
+    // WASD keycodes
+    87: "N",
+    68: "E",
+    83: "S",
+    65: "W"
   };
 
   View.STEP_MILLIS = 100;

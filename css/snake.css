@@ -11,19 +11,19 @@ ul {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
-  font-weight: bold;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 50px;
   margin: 30px;
 }
 
 figure {
   display: inline-block;
-  border: 10px solid black;
+  border: 4px dotted black;
+  border-radius: 10px;
 }
 
 ul {
@@ -37,14 +37,16 @@ ul:after {
 
 li {
   float: left;
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
 }
 
 .apple {
   background: red;
+  border-radius: 4px
 }
 
 .snake {
   background: green;
+  border-radius: 50%;
 }

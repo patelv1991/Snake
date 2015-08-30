@@ -12,35 +12,33 @@
 
   Board.BLANK_SYMBOL = ".";
 
-  Board.blankGrid = function (dim) {
-    var grid = [];
+  // Board.blankGrid = function (dim) {
+  //   var grid = [];
+  //
+  //   for (var i = 0; i < dim; i++) {
+  //     var row = [];
+  //     for (var j = 0; j < dim; j++) {
+  //       row.push(Board.BLANK_SYMBOL);
+  //     }
+  //     grid.push(row);
+  //   }
+  //   return grid;
+  // };
 
-    for (var i = 0; i < dim; i++) {
-      var row = [];
-      for (var j = 0; j < dim; j++) {
-        row.push(Board.BLANK_SYMBOL);
-      }
-      grid.push(row);
-    }
-
-    return grid;
-  };
-
-  Board.prototype.render = function () {
-    var grid = Board.blankGrid(this.dim);
-
-    this.snake.segments.forEach(function (segment) {
-      grid[segment.i][segment.j] = Snake.SYMBOL;
-    });
-
-    grid[this.apple.position.i][this.apple.position.j] = Apple.SYMBOL;
-
-    // join it up
-    var rowStrs = [];
-    grid.map(function (row) {
-      return row.join("");
-    }).join("\n");
-  };
+  // Board.prototype.render = function () {
+  //   var grid = Board.blankGrid(this.dim);
+  //   this.snake.segments.forEach(function (segment) {
+  //     grid[segment.i][segment.j] = Snake.SYMBOL;
+  //   });
+  //
+  //   grid[this.apple.position.i][this.apple.position.j] = Apple.SYMBOL;
+  //
+  //   // join it up
+  //   var rowStrs = [];
+  //   grid.map(function (row) {
+  //     return row.join("");
+  //   }).join("\n");
+  // };
 
   Board.prototype.validPosition = function (coord) {
     return (coord.i >= 0) && (coord.i < this.dim) &&
