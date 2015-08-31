@@ -8,11 +8,11 @@
 
     this.board = new SG.Board(45);
     this.setupGrid();
-
-    this.intervalId = window.setInterval(
-      this.step.bind(this),
-      View.STEP_MILLIS
-    );
+    // this.renderLandingPage();
+    // this.intervalId = window.setInterval(
+    //   this.step.bind(this),
+    //   View.SPEED.medium
+    // );
 
     $(window).on("keydown", this.handleKeyEvent.bind(this));
   };
@@ -31,7 +31,11 @@
     65: "W"
   };
 
-  View.STEP_MILLIS = 100;
+  View.SPEED = {
+    'easy': 120,
+    'medium': 80,
+    'hard': 40
+  };
 
   View.prototype.handleKeyEvent = function (event) {
     if (View.KEYS[event.keyCode]) {

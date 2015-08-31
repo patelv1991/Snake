@@ -26,10 +26,6 @@ figure {
   display: inline-block;
   border: 4px dotted black;
   border-radius: 10px;
-  float: left;
-  position: relative;
-  left: 40%;
-  transform: translateX(-50%);
 }
 
 ul {
@@ -86,6 +82,13 @@ li {
   transform: translateX(-25%);*/
 }
 
+.game-space {
+  float: left;
+  position: relative;
+  left: 40%;
+  transform: translateX(-50%);
+}
+
 .sidebar {
   background-color: rgba(189, 234, 39, 0.35);
   float: left;
@@ -97,6 +100,13 @@ li {
   position: relative;
   left: 38%;
   transform: translateX(-50%);
+}
+
+.welcome {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
 }
 
 .level button {
