@@ -11,7 +11,7 @@
     // Finds the center of the board to initiate the snake
     var center = new SG.Coord(Math.floor(board.dim/2), Math.floor(board.dim/2));
     this.segments = [center];
-
+    this.score = 0;
     this.growTurns = 0;
   };
 
@@ -28,6 +28,7 @@
   Snake.prototype.eatApple = function () {
     if (this.head().equals(this.board.apple.position)) {
       this.growTurns += 3;
+      this.score += 1;
       return true;
     } else {
       return false;

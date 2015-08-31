@@ -8,7 +8,7 @@
 
     this.snake = new SG.Snake(this);
     this.apple = new SG.Apple(this);
-    // this.intervalId = window.setInterval(this.addNewApple.bind(this), 10000);
+    // this.intervalId = window.setInterval(this.changeApplesPosition.bind(this), 10000);
   };
 
   Board.BLANK_SYMBOL = ".";
@@ -40,7 +40,7 @@
   //     return row.join("");
   //   }).join("\n");
   // };
-  // Board.prototype.addNewApple = function () {
+  // Board.prototype.changeApplesPosition = function () {
   //   this.apple = new SG.Apple(this);
   // };
 

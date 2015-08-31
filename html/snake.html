@@ -10,7 +10,41 @@
   <body>
     <h1>Snake</h1>
 
-    <figure class="snake-game"></figure>
+
+    <div class='landing-page'>
+      <figure class="snake-game"></figure>
+    </div>
+
+    <div class="welcome hidden">
+      <h3>Welcome to Snake!</h3>
+      <p>Choose difficulty and</p>
+      <p>begin playing!</p>
+      <p>GOOD LUCK!!!</p>
+    </div>
+
+    <div class="sidebar">
+      <div class="score-board">
+        <h3>Score</h3>
+        <div class="score">0</div>
+        <h3>High Score</h3>
+        <div class="high-score">0</div>
+        <h3>All Time High</h3>
+        <div class="all-time-high">0</div>
+      </div>
+
+      <div class="controls">
+        <h3>Controls</h3>
+        <p>↑ ↓ ← → / W A S D</p>
+        <p>Pause: Space Bar</p>
+      </div>
+
+      <div class="level">
+        <h3>Difficulty Level</h3>
+        <button type="button" class="easy" name="easy">Easy</button>
+        <button type="button" class="medium" name="medium">Med</button>
+        <button type="button" class="hard" name="hard">Hard</button>
+      </div>
+    </div>
 
     <script src="../js/jquery-1.9.1.js"></script>
     <script src="../js/snake-view.js"></script>
@@ -21,7 +55,7 @@
 
     <script>
       $(function () {
-        new SG.View($(".snake-game"));
+        SG.view = new SG.View($(".snake-game"));
       });
     </script>
   </body>
