@@ -11,7 +11,7 @@
     // this.intervalId = window.setInterval(this.changeApplesPosition.bind(this), 10000);
   };
 
-  Board.BLANK_SYMBOL = ".";
+  // Board.BLANK_SYMBOL = ".";
 
   // Board.blankGrid = function (dim) {
   //   var grid = [];
