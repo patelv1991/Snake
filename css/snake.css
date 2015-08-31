@@ -118,11 +118,12 @@ li {
 }
 
 .easy {
-  background-color: #AEAEEC;
+  background-color: greenyellow;
 }
 
+
 .medium {
-  background-color: greenyellow;
+  background-color: #AEAEEC;
 }
 
 .hard {
