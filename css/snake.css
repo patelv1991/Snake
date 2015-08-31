@@ -21,9 +21,14 @@ h1 {
 }
 
 figure {
+  background-color: rgba(189, 234, 39, 0.35);
   display: inline-block;
   border: 4px dotted black;
   border-radius: 10px;
+  float: left;
+  position: relative;
+  left: 40%;
+  transform: translateX(-50%);
 }
 
 ul {
@@ -55,7 +60,7 @@ li {
   display: none;
 }
 
-.sidebar {
+/*.sidebar {
   position: relative;
   left: 22%;
   display: block;
@@ -71,11 +76,27 @@ li {
   left: 38%;
   transform: translateX(-50%);
   float: left;
+}*/
+
+.landing-page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /*left: 50%;
+  transform: translateX(-25%);*/
 }
 
-.landing-page,
 .sidebar {
   background-color: rgba(189, 234, 39, 0.35);
+  float: left;
+  border: 4px dotted black;
+  border-radius: 10px;
+  height: 420px;
+  padding: 10px 20px 20px 20px;
+  /* margin-left: 20px; */
+  position: relative;
+  left: 38%;
+  transform: translateX(-50%);
 }
 
 .level button {
@@ -96,4 +117,17 @@ li {
 
 .hard {
   background-color: red;
+}
+
+.score-board {
+  margin-top: -10px;
+}
+
+.controls {
+  margin-top: 5px;
+  padding-top: 2px;
+}
+
+.level {
+  padding-top: 2px;
 }
