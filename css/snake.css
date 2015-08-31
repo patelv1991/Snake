@@ -13,6 +13,7 @@ ul {
 body {
   font-family: 'Press Start 2P', cursive;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -80,7 +81,6 @@ li {
 
 .landing-page {
   width: 100%;
-  height: 100%;
   position: absolute;
   /*left: 50%;
   transform: translateX(-25%);*/
