@@ -43,8 +43,6 @@
   };
 
   View.prototype.render = function () {
-    // simple text based rendering
-    // this.$el.html(this.board.render());
 
     this.updateClasses(this.board.snake.segments, "snake");
     // this.updateClasses([this.board.snake.head()], "head");
@@ -57,6 +55,7 @@
   };
 
   View.prototype.restartGame = function () {
+    // debugger;
     $(window).off();
     this.board = new SG.Board(45);
     this.renderLandingPage();
@@ -78,6 +77,7 @@
   };
 
   View.prototype.startGame = function (difficulty) {
+    // debugger
     this.intervalId = window.setInterval(
       this.step.bind(this),
       View.SPEED[this.difficulty]
@@ -92,7 +92,8 @@
       this.render();
     } else {
       SG.updateHighScore(this.board.snake.score);
-      SG.gameOver(this.$el);
+      this.gameOver();
+      // SG.gameOver(this.$el);
       // $(window).off();
       window.clearInterval(this.intervalId);
     }
@@ -100,14 +101,14 @@
 
   View.prototype.togglePause = function () {
     if (this.paused) {
-      $('.pause-screen').removeClass('hidden');
+      $('.pause-screen').addClass('hidden');
       this.paused = false;
       this.intervalId = window.setInterval(
         this.step.bind(this),
         View.SPEED[this.difficulty]
       );
     } else {
-      $('.pause-screen').addClass('hidden');
+      $('.pause-screen').removeClass('hidden');
       this.paused = true;
       window.clearInterval(this.intervalId);
     }
@@ -116,15 +117,16 @@
   View.prototype.updateClasses = function(coords, className) {
     this.$li.filter("." + className).removeClass(className);
 
-    // if (coords && coords[0]) {
+    if (coords && coords[0]) {
       coords.forEach(function(coord){
         var flatCoord = (coord.i * this.board.dim) + coord.j;
         this.$li.eq(flatCoord).addClass(className);
       }.bind(this));
-    // }
+    }
   };
 
   View.prototype.renderLandingPage = function () {
+    // debugger
     var $welcome = $('.welcome');
     $welcome.removeClass('hidden');
     $('div.level button').click(function(event) {
@@ -140,14 +142,15 @@
 
 
 
-  SG.gameOver = function ($el) {
-    $el.find('.apple').remove();
+  View.prototype.gameOver = function () {
+    // debugger
+    // this.$el.find('.apple').remove();
     var $gameOver = $('.gameover');
     $gameOver.removeClass('hidden');
-    $('div.gameover button').on('click', function (event) {
-      // event.preventDefault();
-      $('.gameover').addClass('hidden');
-      SG.view.restartGame();
+    $gameOver.find('button').on('click', function (event) {
+      $gameOver.find('button').unbind('click');
+      $gameOver.addClass('hidden');
+      this.restartGame();
     }.bind(this));
   };
 

@@ -7,11 +7,11 @@
     this.dir = "N";
     this.turning = false;
     this.board = board;
+    this.score = 0;
 
     // Finds the center of the board to initiate the snake
     var center = new SG.Coord(Math.floor(board.dim/2), Math.floor(board.dim/2));
     this.segments = [center];
-    this.score = 0;
     this.growTurns = 0;
   };
 
