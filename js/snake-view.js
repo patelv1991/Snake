@@ -144,8 +144,24 @@
       // $('div.level button').off();
       var difficulty = event.target.className;
       this.difficulty = difficulty;
-      this.startGame();
+      this.renderCountDown();
     }.bind(this));
+  };
+
+  View.prototype.renderCountDown = function () {
+    var $countdown = $('.countdown');
+    $countdown.removeClass('hidden');
+    $countdown.find('p').text('3');
+    window.setTimeout(function () {
+      $countdown.find('p').text('2');
+      window.setTimeout(function () {
+        $countdown.find('p').text('1');
+        window.setTimeout(function () {
+          $countdown.addClass('hidden');
+          this.startGame();
+        }.bind(this), 1000);
+      }.bind(this), 1000);
+    }.bind(this), 1000);
   };
 
   View.prototype.gameOver = function () {
