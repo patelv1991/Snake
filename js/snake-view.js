@@ -10,6 +10,11 @@
     this.setupGrid();
     this.paused = false;
     this.renderLandingPage();
+
+    // renders all time highest score upon initialization
+    if (localStorage.getItem('allTimeHigh')) {
+      $('.all-time-high').html(localStorage.getItem('allTimeHigh'));
+    }
   };
 
   View.KEYS = {
@@ -52,6 +57,9 @@
     if (SG.highScore) {
       $('.high-score').html(SG.highScore);
     }
+    if (localStorage.getItem('allTimeHigh')) {
+      $('.all-time-high').html(localStorage.getItem('allTimeHigh'));
+    }
   };
 
   View.prototype.restartGame = function () {
@@ -90,8 +98,9 @@
     if (this.board.snake.segments.length > 0) {
       this.board.snake.move();
       this.render();
-    } else {
       SG.updateHighScore(this.board.snake.score);
+      this.updateAllTimeHighScore(this.board.snake.score);
+    } else {
       this.gameOver();
       // SG.gameOver(this.$el);
       $(window).off();
@@ -139,9 +148,6 @@
     }.bind(this));
   };
 
-
-
-
   View.prototype.gameOver = function () {
     // debugger
     // this.$el.find('.apple').addClass('hidden');
@@ -161,6 +167,17 @@
       }
     } else {
       this.highScore = score;
+    }
+  };
+
+  View.prototype.updateAllTimeHighScore = function (score) {
+    // debugger
+    if (localStorage.getItem('allTimeHigh')) {
+      if (score > localStorage.getItem('allTimeHigh')) {
+        localStorage.setItem('allTimeHigh', score, { path: "" });
+      }
+    } else {
+      localStorage.setItem('allTimeHigh', score, { path: "" });
     }
   };
 })();
