@@ -94,7 +94,7 @@
       SG.updateHighScore(this.board.snake.score);
       this.gameOver();
       // SG.gameOver(this.$el);
-      // $(window).off();
+      $(window).off();
       window.clearInterval(this.intervalId);
     }
   };
@@ -144,7 +144,7 @@
 
   View.prototype.gameOver = function () {
     // debugger
-    // this.$el.find('.apple').remove();
+    // this.$el.find('.apple').addClass('hidden');
     var $gameOver = $('.gameover');
     $gameOver.removeClass('hidden');
     $gameOver.find('button').on('click', function (event) {
