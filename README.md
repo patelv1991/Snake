@@ -5,7 +5,7 @@
 
 ## Description
 
-Snake is a clone of the class 1970s arcade game. It was built using
+Snake is a clone of the classic 1970s arcade game. It was built using
 - Javascript
 - jQuery
 - HTML
